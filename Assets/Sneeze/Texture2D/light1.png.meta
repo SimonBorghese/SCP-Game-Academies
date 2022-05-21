@@ -1,15 +1,12 @@
 fileFormatVersion: 2
 guid: 1a4686f5a9bd90a49a862f5504a7a0f8
-timeCreated: 1653143111
-licenseType: Free
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
     second: light1
   externalObjects: {}
-  usedFileIDs: []
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -29,6 +26,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,9 +59,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -101,7 +104,7 @@ TextureImporter:
         - {x: -67.00001, y: 109}
         - {x: -46.00001, y: 119}
         - {x: -24.00001, y: 126}
-        - {x: -7.629395E-06, y: 128}
+        - {x: -0.000007629395, y: 128}
         - {x: 23.99999, y: 126}
         - {x: 45.99999, y: 119}
         - {x: 66.99999, y: 109}
@@ -118,7 +121,7 @@ TextureImporter:
         - {x: 66.99999, y: -109}
         - {x: 45.99999, y: -119}
         - {x: 23.99999, y: -126}
-        - {x: -7.629395E-06, y: -128}
+        - {x: -0.000007629395, y: -128}
         - {x: -24.00001, y: -126}
         - {x: -46.00001, y: -119}
         - {x: -67.00001, y: -109}
@@ -131,22 +134,24 @@ TextureImporter:
       spriteID: 04de57b3108e411b8ffabc2fe5e89b2c
       internalID: 21300000
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID:
+    spriteID: 
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag:
+    nameFileIdTable:
+      light1: 21300000
+  spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

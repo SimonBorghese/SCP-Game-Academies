@@ -1,15 +1,12 @@
 fileFormatVersion: 2
 guid: 56e4cafb598bf6e47b61fa02bc221ba1
-timeCreated: 1653143099
-licenseType: Free
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
     second: CF-Button-Up
   externalObjects: {}
-  usedFileIDs: []
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -29,6 +26,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,9 +59,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -108,7 +111,7 @@ TextureImporter:
         - {x: 121, y: -33.98663}
         - {x: 14.00001, y: 84.01337}
       - - {x: -102, y: -35.98663}
-        - {x: 7.629395E-06, y: 66.01337}
+        - {x: 0.000007629395, y: 66.01337}
         - {x: 103, y: -34.98663}
         - {x: -0.9999924, y: 17.01337}
       tessellationDetail: 0
@@ -116,22 +119,24 @@ TextureImporter:
       spriteID: b202bea33ee04742801ee626a11a020e
       internalID: 21300000
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID:
+    spriteID: 
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag:
+    nameFileIdTable:
+      CF-Button-Up: 21300000
+  spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
