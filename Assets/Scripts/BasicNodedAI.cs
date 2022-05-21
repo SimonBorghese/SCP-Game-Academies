@@ -23,12 +23,13 @@ public class BasicNodedAI : MonoBehaviour
         {
             nodes.Add(obj);
         }
-
+        Debug.Log("Setting");
         _agent.destination = nodes[0].transform.position;
     }
     // Start is called before the first frame update
     void Start()
     {
+        _agent = GetComponent<NavMeshAgent>();
         getAllNodes();
     }
 
@@ -39,6 +40,7 @@ public class BasicNodedAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, _agent.destination) <= 2)
         {
+            Debug.Log("Removing");
             nodes.RemoveAt(0);
             if (nodes.Count > 0)
             {
