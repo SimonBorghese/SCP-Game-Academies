@@ -14,12 +14,7 @@ public class BasicNodedAI : MonoBehaviour
     private GameObject[] foundObjects;
 
     private List<GameObject> nodes;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     void getAllNodes()
     {
         foundObjects = GameObject.FindGameObjectsWithTag(nodeTargets);
@@ -28,11 +23,31 @@ public class BasicNodedAI : MonoBehaviour
         {
             nodes.Add(obj);
         }
+
+        _agent.destination = nodes[0].transform.position;
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+        getAllNodes();
+    }
+
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector3.Distance(transform.position, _agent.destination) <= 2)
+        {
+            nodes.RemoveAt(0);
+            if (nodes.Count > 0)
+            {
+                _agent.destination = nodes[0].transform.position;
+            }
+            else
+            {
+                getAllNodes();
+            }
+        }
     }
 }
