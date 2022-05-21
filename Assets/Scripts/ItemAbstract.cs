@@ -11,4 +11,12 @@ public class Item : MonoBehaviour
     {
         this.gameObject.tag = "Item";
     }
+
+    void PickUp() {
+
+    }
+
+    void Throw() {
+
+    }
 }
