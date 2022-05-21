@@ -42,4 +42,8 @@ public class FrontendInventory : MonoBehaviour
             createSlots(open);
         }
     }
+
+    public Invetory getBackend() {
+        return invetory;
+    }
 }

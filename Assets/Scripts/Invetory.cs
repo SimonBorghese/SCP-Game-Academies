@@ -6,7 +6,12 @@ public class Invetory : MonoBehaviour
 {
     public float maxSize;
     private List<Item> invetory;
+<<<<<<< Updated upstream
     // Start is called before thLeftControle first frame update
+=======
+    private int equippedSlot = 0; 
+    // Start is called before the first frame update
+>>>>>>> Stashed changes
     void Start()
     {
         invetory = new List<Item>();
@@ -36,7 +41,7 @@ public class Invetory : MonoBehaviour
         invetory.Clear();
     }
 
-    bool hasItem(string name)
+    public bool hasItem(string name)
     {
         foreach (Item item in invetory)
         {
@@ -49,7 +54,7 @@ public class Invetory : MonoBehaviour
         return false;
     }
     
-    bool useItem(string name)
+    public bool useItem(string name)
     {
         foreach (Item item in invetory)
         {
@@ -62,6 +67,11 @@ public class Invetory : MonoBehaviour
 
         return false;
     }
+
+    public Item equippedItem() {   
+        return invetory[equippedSlot];
+    }
+
     void Update()
     {
         
