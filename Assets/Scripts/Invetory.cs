@@ -6,7 +6,7 @@ public class Invetory : MonoBehaviour
 {
     public float maxSize;
     private List<Item> invetory;
-    // Start is called before the first frame update
+    // Start is called before thLeftControle first frame update
     void Start()
     {
         invetory = new List<Item>();
