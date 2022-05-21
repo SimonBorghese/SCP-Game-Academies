@@ -13,18 +13,18 @@ public class FrontendInventory : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        open = false;
-    }
-
-    void Awake() {
         slots = new List<GameObject>();
-        invetory = (Invetory)this.gameObject.GetComponent(typeof(Invetory));
+        invetory = this.gameObject.GetComponent<Invetory>();
 
         for(int i=0; i<invetory.maxSize; i++) {
             GameObject placement = Instantiate(slot);
             placement.transform.SetParent(this.gameObject.transform);
             slots.Add(placement);
         }
+    }
+
+    void Awake() {
+        open = false;
     }
 
     void createSlots(bool createIt) {
