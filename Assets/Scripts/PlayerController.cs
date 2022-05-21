@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fallLevel;
 
     [SerializeField] private float gravity;
+
+    private float initHeight;
+
+    public float crouchDivider;
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,6 +40,7 @@ public class PlayerController : MonoBehaviour
         mainCam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
         gravity = Physics.gravity.y;
+        initHeight = _controller.height;
     }
 
     void updateMovement()
@@ -83,6 +88,21 @@ public class PlayerController : MonoBehaviour
         updateMovement();
         updateLook();
         updateJump();
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (_controller.height != initHeight / crouchDivider)
+            {
+                _controller.height = initHeight / crouchDivider;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+            _controller.Move(new Vector3(0, initHeight / crouchDivider, 0));
+            if (_controller.height != initHeight)
+            {
+                _controller.height = initHeight;
+            }
+        }
     }
 }
