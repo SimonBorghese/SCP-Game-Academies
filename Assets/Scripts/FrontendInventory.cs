@@ -20,7 +20,7 @@ public class FrontendInventory : MonoBehaviour
 
         for(int i=0; i<invetory.maxSize; i++) {
             GameObject placement = Instantiate(slot);
-            
+            placement.transform.parent = this.gameObject.transform;
         }
     } 
 
