@@ -16,9 +16,9 @@ public class FrontendInventory : MonoBehaviour
         invetory = (Invetory)this.gameObject.GetComponent(typeof(Invetory));
     }
 
-    Panel makeSlot() {
-        return null;
-    }
+    //Panel makeSlot() {
+    //    return null;
+    //}
 
     // Update is called once per frame
     void Update()
