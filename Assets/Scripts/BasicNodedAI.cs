@@ -113,7 +113,6 @@ public class BasicNodedAI : MonoBehaviour
             default:
                 if (Vector3.Distance(transform.position, _agent.destination) <= 2)
                 {
-                    Debug.Log("Found Labron James");
                     currenttarget = ORDER_OF_ORDER.NONE;
                     getAllNodes();
                 }

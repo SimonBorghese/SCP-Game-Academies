@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class scp049animator : MonoBehaviour
 {
-    
+    private Animation goods;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

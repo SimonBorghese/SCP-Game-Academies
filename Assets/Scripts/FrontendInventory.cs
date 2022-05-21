@@ -21,6 +21,8 @@ public class FrontendInventory : MonoBehaviour
             placement.transform.SetParent(this.gameObject.transform);
             slots.Add(placement);
         }
+
+        createSlots(open);
     }
 
     void Awake() {
