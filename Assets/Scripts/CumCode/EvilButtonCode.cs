@@ -20,7 +20,7 @@ public class EvilButtonCode : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player"))
         {
             GameObject[] founds = GameObject.FindGameObjectsWithTag("Door");
             GameObject obj = founds[0];
