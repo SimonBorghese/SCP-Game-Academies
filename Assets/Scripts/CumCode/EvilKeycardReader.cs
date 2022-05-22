@@ -31,7 +31,7 @@ public class EvilKeycardReader : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //Debug.Log(plr.GetComponent<Invetory>().hasItem(wow));
-        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player") && (plr.GetComponent<Invetory>().hasItem(wow) || plr.GetComponent<Invetory>().hasItem(screwdriver) ))
+        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player") && (plr.GetComponent<Invetory>().hasItem(wow)))
         {
             GameObject[] founds = GameObject.FindGameObjectsWithTag("Door");
             GameObject obj = founds[0];
@@ -45,8 +45,6 @@ public class EvilKeycardReader : MonoBehaviour
                 }
             }
 
-            if (!plr.GetComponent<Invetory>().hasItem(wow))
-            {
                 sparks.Play();
                 spark.Play();
                 GameObject[] scps = GameObject.FindGameObjectsWithTag("SCP");
@@ -54,7 +52,7 @@ public class EvilKeycardReader : MonoBehaviour
                 {
                     objSCP.GetComponent<BasicNodedAI>().setSoundTarget(this.gameObject);
                 }
-            }
+            
             openNormal.Play();
             obj.GetComponent<DoorThing>().ChangeState();
         }

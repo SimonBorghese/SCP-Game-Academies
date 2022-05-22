@@ -6,15 +6,19 @@ using UnityEngine;
 public class PickupAble : MonoBehaviour
 {
     public GameObject player;
+    private GameObject inventory;
 
     public Item targetItem;
 
     public AudioSource pickupOwO;
 
+    private bool pickedUp = false;
+
     private bool markedForDeath = false;
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GameObject.Find("Canvas/Inventory");
         player = GameObject.FindWithTag("Player");
     }
 
@@ -30,13 +34,14 @@ public class PickupAble : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !pickedUp)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                player.GetComponent<Invetory>().addItem(targetItem);
+                inventory.GetComponent<Invetory>().addItem(targetItem);
                 pickupOwO.Play();
-                markedForDeath = true; 
+                markedForDeath = true;
+                pickedUp = true;
                 //Destroy(this.gameObject);
             }
         }
