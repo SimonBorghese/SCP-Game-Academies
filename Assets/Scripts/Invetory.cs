@@ -6,8 +6,6 @@ public class Invetory : MonoBehaviour
 {
     public float maxSize;
     private List<Item> invetory;
-
-    private FrontendInventory iv;
     // Start is called before thLeftControle first frame update
     private int equippedSlot = 0; 
     // Start is called before the first frame update
