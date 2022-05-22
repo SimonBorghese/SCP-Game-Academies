@@ -14,7 +14,7 @@ public class Invetory : MonoBehaviour
         invetory = new List<Item>();
     }
 
-    void addItem(Item owo)
+    public void addItem(Item owo)
     {
         if (invetory.Count < maxSize)
         {
