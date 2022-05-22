@@ -128,7 +128,7 @@ public class BasicNodedAI : MonoBehaviour
         getAllNodes();
     }
 
-    bool setSoundTarget(GameObject sound)
+    public bool setSoundTarget(GameObject sound)
     {
         if (currenttarget <= ORDER_OF_ORDER.SOUND)
         {
