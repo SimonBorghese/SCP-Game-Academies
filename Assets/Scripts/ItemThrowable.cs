@@ -11,7 +11,7 @@ public class ItemThrowable : MonoBehaviour
 
     private bool alreadyDied = false;
 
-    public float height = 2.0f;
+    public float height = 250.0f;
 
     private Rigidbody body;
     void Start()
@@ -28,16 +28,19 @@ public class ItemThrowable : MonoBehaviour
             }
         }
 
-        Rigidbody body2;
-        if (TryGetComponent(out body2))
-        {
-            body = body2;
-            body.angularVelocity = (Camera.main.transform.forward * height);
-        }
+        body = GetComponent<Rigidbody>();
+        body.velocity = (Camera.main.transform.forward + Camera.main.transform.up);
+        //body.AddForce(Camera.main.transform.forward * height, ForceMode.Acceleration);
+        
 
 
     }
-    
+
+    private void Update()
+    {
+        body.AddForce((Camera.main.transform.forward * (height * Time.deltaTime)), ForceMode.VelocityChange);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!alreadyDied && collision.gameObject.isStatic)

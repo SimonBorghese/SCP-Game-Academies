@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private float initHeight;
 
     public float crouchDivider;
+
+
+    public GameObject itemThrow;
     // Start is called before the first frame update
     void Awake()
     {
@@ -82,12 +85,8 @@ public class PlayerController : MonoBehaviour
         fallLevel += gravity * Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    void updateCrouch()
     {
-        updateMovement();
-        updateLook();
-        updateJump();
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (_controller.height != initHeight / crouchDivider)
@@ -103,6 +102,20 @@ public class PlayerController : MonoBehaviour
             {
                 _controller.height = initHeight;
             }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        updateMovement();
+        updateLook();
+        updateJump();
+        updateCrouch();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(itemThrow, transform.position + Vector3.up + (mainCam.transform.forward * 2), new Quaternion());
         }
     }
 }
