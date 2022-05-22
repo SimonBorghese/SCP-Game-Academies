@@ -18,7 +18,7 @@ public class PickupAble : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GameObject.Find("Canvas/Inventory");
+        //inventory = GameObject.Find("Canvas/Inventory");
         player = GameObject.FindWithTag("Player");
     }
 
@@ -38,7 +38,7 @@ public class PickupAble : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                inventory.GetComponent<Invetory>().addItem(targetItem);
+                player.GetComponent<Invetory>().addItem(targetItem);
                 pickupOwO.Play();
                 markedForDeath = true;
                 pickedUp = true;
