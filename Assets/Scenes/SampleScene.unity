@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312585, g: 0.3807451, b: 0.358728, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3487,7 +3487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd5178cd1ff1d048922f839a1a6d758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryScreen: {fileID: 0}
+  victoryScreen: {fileID: 1713120794}
 --- !u!1001 &608086285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13687,6 +13687,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653010630049}
+  - component: {fileID: 919132148803784476}
+  - component: {fileID: 919132148803784477}
   m_Layer: 0
   m_Name: Lockdownbutton
   m_TagString: Untagged
@@ -13694,6 +13696,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &919132148803784476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148803784475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &919132148803784477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148803784475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf62ddb6c3d198e2bc2f071258ebe81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 581049454}
 --- !u!4 &987375509990402413
 Transform:
   m_ObjectHideFlags: 0
