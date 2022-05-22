@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FrontendInventory : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class FrontendInventory : MonoBehaviour
     void Start() {
         slots = new List<GameObject>();
         invetory = this.gameObject.GetComponent<Invetory>();
+        
 
         for(int i=0; i<invetory.maxSize; i++) {
             GameObject placement = Instantiate(slot);
@@ -32,6 +35,12 @@ public class FrontendInventory : MonoBehaviour
     void createSlots(bool createIt) {
         for(int i=0; i<slots.Count; i++) {
             slots[i].SetActive(createIt);
+        }
+        
+        for(int i=0; i<slots.Count; i++)
+        {
+           Image imager = slots[i].transform.Find("Image").GetComponent<Image>();
+           imager.sprite = invetory.getItemInList(i).icon;
         }
     }
 
