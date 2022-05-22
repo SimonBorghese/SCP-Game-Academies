@@ -14,7 +14,7 @@ public class Invetory : MonoBehaviour
         invetory = new List<Item>();
     }
 
-    void addItem(Item owo)
+    public void addItem(Item owo)
     {
         if (invetory.Count < maxSize)
         {
@@ -22,7 +22,7 @@ public class Invetory : MonoBehaviour
         }
     }
 
-    void removeItem(string name)
+    public void removeItem(string name)
     {
         foreach (Item obj in invetory)
         {
@@ -33,7 +33,7 @@ public class Invetory : MonoBehaviour
         }
     }
 
-    void removeAll()
+    public void removeAll()
     {
         invetory.Clear();
     }
