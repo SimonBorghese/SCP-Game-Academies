@@ -7,6 +7,7 @@ public class DoorThing : MonoBehaviour
     private bool open;
 
     public Animator anim;
+    public bool locked;
 
     // Start is called before the first frame update
     void Start() {
@@ -18,14 +19,29 @@ public class DoorThing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
-        
+    void Update()
+    {
+        if (locked && open)
+            CloseDoor();
     }
 
     public void OpenDoor() {
-        if(open)return;
+        if(open || locked)
+            return;
+        
         open = true;
 
+        anim.SetBool("Open Door", open);
+        anim.SetTrigger("SetDoorStateTo");
+    }
+    
+    public void CloseDoor() {
+        if(!open)
+            return;
         
+        open = false;
+
+        anim.SetBool("Open Door", open);
+        anim.SetTrigger("SetDoorStateTo");
     }
 }
