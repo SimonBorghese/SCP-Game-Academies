@@ -604,6 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wow: {fileID: 11400000, guid: 937d64f741bead5d2bbd74a3d3ed6614, type: 2}
+  screwdriver: {fileID: 11400000, guid: 8817e2c277f32c9d6b22a2dd69572b1c, type: 2}
   spark: {fileID: 7317435439614285141}
   openNormal: {fileID: 1163291960}
   sparks: {fileID: 1163291965}
@@ -5553,6 +5554,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3094199550827463861, guid: a2c57592900e6a2ffb66ef98cab93b17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.036414534
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094199550827463861, guid: a2c57592900e6a2ffb66ef98cab93b17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.21134377
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094199551091652325, guid: a2c57592900e6a2ffb66ef98cab93b17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03730288
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094199551091652325, guid: a2c57592900e6a2ffb66ef98cab93b17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.056825876
+      objectReference: {fileID: 0}
     - target: {fileID: 3094199551316722200, guid: a2c57592900e6a2ffb66ef98cab93b17, type: 3}
       propertyPath: m_Name
       value: GoodDOor (1)
