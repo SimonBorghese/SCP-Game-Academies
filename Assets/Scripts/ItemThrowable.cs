@@ -31,7 +31,7 @@ public class ItemThrowable : MonoBehaviour
         }
 
         body = GetComponent<Rigidbody>();
-        body.velocity = (Camera.main.transform.forward + Camera.main.transform.up);
+        body.velocity = (Camera.main.transform.forward) * 25;
         //body.AddForce(Camera.main.transform.forward * height, ForceMode.Acceleration);
         
 
@@ -40,7 +40,7 @@ public class ItemThrowable : MonoBehaviour
 
     private void Update()
     {
-        body.AddForce((Camera.main.transform.forward * (height * Time.deltaTime)), ForceMode.VelocityChange);
+        //body.AddForce((Camera.main.transform.forward * (height * Time.deltaTime)), ForceMode.VelocityChange);
     }
 
     private void OnCollisionEnter(Collision collision)
