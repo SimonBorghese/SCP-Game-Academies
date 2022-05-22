@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public float crouchDivider;
 
 
-    private GameObject itemThrow;
+    public GameObject itemThrow;
     // Start is called before the first frame update
     void Awake()
     {
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         updateJump();
         updateCrouch();
 
-        if (Input.GetButtonDown("Fire1") && itemThrow != null)
+        if ( itemThrow != null && Input.GetButtonDown("Fire1"))
         {
             Instantiate(itemThrow, transform.position + Vector3.up + (mainCam.transform.forward * 2), new Quaternion());
         }
