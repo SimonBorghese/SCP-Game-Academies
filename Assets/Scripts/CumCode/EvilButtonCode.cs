@@ -33,7 +33,8 @@ public class EvilButtonCode : MonoBehaviour
                     furtherst = Vector3.Distance(transform.position, tester.transform.position);
                 }
             }
-            
+
+            GetComponent<AudioSource>().Play();
             obj.GetComponent<DoorThing>().OpenDoor();
         }
     }
