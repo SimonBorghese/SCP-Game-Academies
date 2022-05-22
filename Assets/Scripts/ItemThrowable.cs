@@ -14,6 +14,8 @@ public class ItemThrowable : MonoBehaviour
     public float height = 250.0f;
 
     private Rigidbody body;
+
+    public AudioSource hitSound;
     void Start()
     {
         GameObject[] foundObjs = GameObject.FindGameObjectsWithTag("SCP");
@@ -49,7 +51,7 @@ public class ItemThrowable : MonoBehaviour
             {
                 ai.setSoundTarget(this.gameObject);
             }
-
+            hitSound.Play();
             alreadyDied = true;
         }
     }
