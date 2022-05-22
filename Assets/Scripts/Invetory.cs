@@ -5,7 +5,7 @@ using UnityEngine;
 public class Invetory : MonoBehaviour
 {
     public float maxSize;
-    private List<Item> invetory;
+    [SerializeField] private List<Item> invetory;
     // Start is called before thLeftControle first frame update
     private int equippedSlot = 0; 
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class Invetory : MonoBehaviour
         if (invetory.Count < maxSize)
         {
             invetory.Add(owo);
+            Debug.Log("Adding: "+ owo.name);
         }
     }
 
@@ -38,11 +39,11 @@ public class Invetory : MonoBehaviour
         invetory.Clear();
     }
 
-    public bool hasItem(string name)
+    public bool hasItem(Item name)
     {
-        foreach (Item item in invetory)
+        foreach (Item itm in invetory)
         {
-            if (item.name.Equals(name))
+            if (itm.name == name.name)
             {
                 return true;
             }

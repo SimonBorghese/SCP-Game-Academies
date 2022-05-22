@@ -7,15 +7,13 @@ public class EvilKeycardReader : MonoBehaviour
 {
     public int requiredLevel;
 
-    private Invetory player;
+    private GameObject plr;
+
+    public Item wow;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject plr = GameObject.FindWithTag("Player");
-        if (!plr.TryGetComponent( out player))
-        {
-            Debug.Log("For some fucking reason the player doesn't have an invetory, give it one :)");
-        }
+         plr = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -26,7 +24,8 @@ public class EvilKeycardReader : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player") && player.hasItem("Keycard"))
+        //Debug.Log(plr.GetComponent<Invetory>().hasItem(wow));
+        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player") && plr.GetComponent<Invetory>().hasItem(wow))
         {
             GameObject[] founds = GameObject.FindGameObjectsWithTag("Door");
             GameObject obj = founds[0];

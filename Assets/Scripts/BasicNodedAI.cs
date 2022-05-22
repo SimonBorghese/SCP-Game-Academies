@@ -59,7 +59,6 @@ public class BasicNodedAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Updating...!");
         RaycastHit[] hits = new RaycastHit[3];
         Vector3 header = player.transform.position - transform.position;
         float dotOwo = Vector3.Dot(header, transform.forward);
@@ -84,7 +83,6 @@ public class BasicNodedAI : MonoBehaviour
 
                 if (!foundBad)
                 {
-                    Debug.Log("Good OWO");
                     currenttarget = ORDER_OF_ORDER.PLAYER;
                     _agent.destination = player.transform.position;
                 }
@@ -92,7 +90,6 @@ public class BasicNodedAI : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not");
         }
         
         switch (currenttarget)
