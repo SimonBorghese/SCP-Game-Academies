@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
 
 
 public class BasicNodedAI : MonoBehaviour
@@ -142,6 +143,12 @@ public class BasicNodedAI : MonoBehaviour
         _agent.destination = sound.transform.position;
         return true;
     }
-    
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
 }
