@@ -44,4 +44,16 @@ public class DoorThing : MonoBehaviour
         anim.SetBool("Open Door", open);
         anim.SetTrigger("SetDoorStateTo");
     }
+
+    public void ChangeState()
+    {
+        if (open)
+        {
+            CloseDoor();
+        }
+        else
+        {
+            OpenDoor();
+        }
+    }
 }

@@ -35,7 +35,7 @@ public class EvilButtonCode : MonoBehaviour
             }
 
             GetComponent<AudioSource>().Play();
-            obj.GetComponent<DoorThing>().OpenDoor();
+            obj.GetComponent<DoorThing>().ChangeState();
         }
     }
 }
