@@ -9,6 +9,9 @@ public class DoorThing : MonoBehaviour
     public Animator anim;
     public bool locked;
 
+    public AudioSource openSound;
+    public AudioSource closeSound;
+
     // Start is called before the first frame update
     void Start() {
 
@@ -30,7 +33,7 @@ public class DoorThing : MonoBehaviour
             return;
         
         open = true;
-
+        openSound.Play();
         anim.SetBool("Open Door", open);
         anim.SetTrigger("SetDoorStateTo");
     }
@@ -40,7 +43,7 @@ public class DoorThing : MonoBehaviour
             return;
         
         open = false;
-
+        closeSound.Play();
         anim.SetBool("Open Door", open);
         anim.SetTrigger("SetDoorStateTo");
     }

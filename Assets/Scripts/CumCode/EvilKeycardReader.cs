@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class EvilKeycardReader : MonoBehaviour
 {
-    public int requiredLevel;
-
     private GameObject plr;
 
     public Item wow;
+    
+    
+    public ParticleSystem spark;
+
+    public AudioSource openNormal;
+
+    public AudioSource sparks;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +44,9 @@ public class EvilKeycardReader : MonoBehaviour
                 }
             }
 
-            GetComponent<AudioSource>().Play();
+            openNormal.Play();
+            sparks.Play();
+            spark.Play();
             obj.GetComponent<DoorThing>().ChangeState();
         }
     }
