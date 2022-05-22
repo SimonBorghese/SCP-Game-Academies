@@ -40,7 +40,9 @@ public class FrontendInventory : MonoBehaviour
         for(int i=0; i<slots.Count; i++)
         {
            Image imager = slots[i].transform.Find("Image").GetComponent<Image>();
-           imager.sprite = invetory.getItemInList(i).icon;
+           
+           if(invetory.getItemInList(i) != null) 
+               imager.sprite = invetory.getItemInList(i).icon;
         }
     }
 

@@ -14,13 +14,14 @@ public class GroundItem : MonoBehaviour
     
     private float elapsed;
     private bool detect;
+    private bool pickedUp;
 
     private Vector3 tempPos;
     
     // Start is called before the first frame update
     void Start()
     {
-        invetory = inventoryUI.transform.GetComponent("Inventory").GetComponent<Invetory>();
+        invetory = inventoryUI.transform.GetComponent<Invetory>();
     }
     
     //Update Fixed
@@ -38,13 +39,16 @@ public class GroundItem : MonoBehaviour
 
             if(detect)
             {
-                if(elapsed >= 1)
+                if(elapsed >= 1/5 && !pickedUp)
                 {
                     PickUpObject();
                     return;
+                }else if (pickedUp)
+                {
+                    return;
                 }
                 
-                this.gameObject.transform.position = Vector3.Lerp(tempPos, player.transform.position, Mathf.Clamp(elapsed, 0, 1));
+                this.gameObject.transform.position = Vector3.Lerp(tempPos, player.transform.position, Mathf.Clamp(elapsed * 5, 0, 1));
                 elapsed += Time.deltaTime;
             }
         }
@@ -52,9 +56,11 @@ public class GroundItem : MonoBehaviour
 
     public void PickUpObject()
     {
-        //Destroy(this.gameObject);
-
         invetory.addItem(item);
+        pickedUp = true;
+        
+        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

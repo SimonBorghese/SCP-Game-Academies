@@ -71,8 +71,11 @@ public class Invetory : MonoBehaviour
         return invetory[equippedSlot];
     }
 
-    public Item getItemInList(int index)
+    public Item getItemInList(int index = 0)
     {
+        if (index >= invetory.Count || index < 0)
+            return null;
+        
         return invetory[index];
     }
 
