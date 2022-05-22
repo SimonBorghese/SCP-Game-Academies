@@ -38,7 +38,9 @@ public class BasicNodedAI : MonoBehaviour
             nodes.Add(obj);
         }
         Debug.Log("Setting");
-        _agent.destination = nodes[0].transform.position;
+        _agent.destination = new Vector3(nodes[0].transform.position.x, 
+            transform.position.y,
+            nodes[0].transform.position.z);
     }
     // Start is called before the first frame update
     void Start()
@@ -102,7 +104,9 @@ public class BasicNodedAI : MonoBehaviour
                     nodes.RemoveAt(0);
                     if (nodes.Count > 0)
                     {
-                        _agent.destination = nodes[0].transform.position;
+                        _agent.destination = new Vector3(nodes[0].transform.position.x, 
+                                transform.position.y,
+                                nodes[0].transform.position.z);
                     }
                     else
                     {
@@ -125,7 +129,7 @@ public class BasicNodedAI : MonoBehaviour
     void activateIdle()
     {
         currenttarget = ORDER_OF_ORDER.NONE;
-        getAllNodes();
+        getAllNodes(); 
     }
 
     public bool setSoundTarget(GameObject sound)
